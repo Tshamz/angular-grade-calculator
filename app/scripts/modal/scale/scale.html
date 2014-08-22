@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div id="modal-grade-scale" ng-controller="ScaleCtrl">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" data-ng-click="$close()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel">Grading Scale</h4>
+  </div>
+  <div class="modal-body">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr class="modal-adjust-columns">
+          <th>Letter Grade</th>
+          <th>Score (minimum)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="modal-adjust-columns" data-ng-repeat="row in scale">
+          <td>{{ row.grade }}</td>
+          <td><span contenteditable="false">{{ row.threshold | percentage:2:'none' }}</span>%</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="toggle-edit">
+      <i class="toggle-icon glyphicon glyphicon-lock" togglecontenteditable></i>
+      <span class="toggle-text">Click the lock to make changes</span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-default" ng-disabled>Cancel</button>
+    <button class="btn btn-primary" ng-disabled="locked">Save</button>
+  </div>
+</div>

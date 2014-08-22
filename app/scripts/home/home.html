@@ -1,0 +1,33 @@
+<div id="info" class="row">
+  <div class="col-xs-12">
+    <h1>Grade Calculator</h1>
+    <ul>
+      <li><strong>Assignment</strong> must be named</li>
+      <li><strong>Weights</strong> must fall in the <strong>1%</strong> to <strong>100%</strong> range</li>
+      <li><strong>Scores</strong> can fall in the <strong>0%</strong> to <strong>999%</strong> range (e.g. <strong>102%</strong> is a very possible test score)</li>
+      <li>The <strong>weighted total</strong> cannot exceed <strong>100%</strong></li>
+      <li>No more than <strong>2</strong> decimal places</li>
+      <li><strong>Number formatting:</strong>
+        <ul>
+          <li>There must be <strong>one</strong>, <strong>two</strong>, or <strong>three</strong> digits to the <strong>left</strong> of decimal</li>
+          <li>There can be <strong>zero</strong>, <strong>one</strong>, or <strong>two digits</strong> to the <strong>right</strong> of decimal</li>
+          <li>Both <strong>scores</strong> and <strong>weights</strong> can be made up of anywhere from <strong>one</strong> to <strong>five</strong> digits</li>
+          <li><strong class="text-success">OK: </strong>
+            <strong>###.## </strong>or <strong>###.# </strong>or <strong>###</strong>
+            (e.g. <strong>102.49% </strong>or <strong>45.2% </strong>or <strong>98%</strong>)
+          </li>
+          <li><strong class="text-danger">BAD: </strong>
+            <strong>####.# </strong>or <strong>##.### </strong>or <strong>###.</strong>or <strong>######</strong>
+            (e.g. <strong>0073.4% </strong>or <strong>54.272% </strong>or <strong>042.%</strong>or <strong>09001%</strong>)
+            <strong></strong>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <span>If one of those conditions isn't met, you won't be able to add the assignment until you fix it</span>
+  </div>
+</div>
+
+<div id="assignments" ng-include="'scripts/home/assignments/assignments.html'"></div>
+
+<div id="results" ng-include="'scripts/home/results/results.html'"></div>

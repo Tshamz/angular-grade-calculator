@@ -1,0 +1,17 @@
+#add-assignment {
+  margin: 15px 0 30px;
+  button {
+    width: 75px;
+    @media screen and (min-width: 1024px) {
+      width: 120px;
+    }
+  }
+}
+
+input[type=number] {-moz-appearance: textfield;}
+
+input[type=number]::-webkit-inner-spin-button,  // Remove spinners from input[type="number"]
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

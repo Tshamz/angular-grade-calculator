@@ -1,0 +1,49 @@
+<div id="add-assignment" class="row" ng-controller="AssignmentsCtrl">
+  <form class="form-inline" name="addAssignment" role="form" ng-submit="addRow(newRow)" novalidate resetfocus>
+    <div class="input-group col-xs-2">
+      <label class="sr-only" for="assignment-name">Assignment</label>
+      <input id="assignment-name" class="form-control" name="inputAssignment" type="text" placeholder="Assignment" ng-model="newRow.assignment" required>
+    </div>
+    <div class="input-group col-xs-2">
+      <label class="sr-only" for="assignment-weight">Weight</label>
+      <input id="assignment-weight" class="form-control" name="inputWeight" type="number" min="1" max="100" step="any" placeholder="Weight" ng-model="newRow.weight" ng-pattern="/^\d{1,3}(\.\d{1,2})?$/" required>
+      <span class="input-group-addon">%</span>
+    </div>
+    <div class="input-group col-xs-2">
+      <label class="sr-only" for="assignment-score">Score</label>
+      <input id="assignment-score" class="form-control" name="inputScore" type="number" min="0" step="any" placeholder="Score" ng-model="newRow.score" ng-pattern="/^\d{0,3}(\.\d{1,2})?$/" required>
+      <span class="input-group-addon">%</span>
+    </div>
+    <button class="btn btn-primary" type="submit" ng-disabled="addAssignment.$invalid" disabled>Add</button>
+    <button class="btn btn-danger" type="reset" >Reset</button>
+  </form>
+</div>
+
+<div id="modal-triggers" class="row">
+  <div class="pull-right">
+    <a href="" ng-click="openModal('scripts/modal/ti83/ti83.html', 'sm')">Calculator</a> / <a href="" ng-click="openModal('scripts/modal/scale/scale.html', 'sm')">Grading Scale</a>
+  </div>
+</div>
+
+<div id="display-assignments" class="row" ng-controller="AssignmentsCtrl">
+  <table class="table table-bordered table-striped text-center">
+    <thead>
+      <tr>
+        <th class="text-center">Name</th>
+        <th class="text-center">Weight</th>
+        <th class="text-center">Score</th>
+        <th class="text-center">Letter Grade</th>
+        <th class="text-center">[ <a href="#" ng-click="clearAll();">Clear All</a> ]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in gradedAssignments">
+        <td>{{ row.assignment | capitalize }}</td>
+        <td>{{ row.weight | percentage }}</td>
+        <td>{{ row.score | percentage }}</td>
+        <td><b>{{ row.grade }}</b></td>
+        <td>[ <a href="#" ng-click="removeRow($index)">Remove</a> ]</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

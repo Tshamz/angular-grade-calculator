@@ -1,0 +1,51 @@
+<div id="results-table" class="row" ng-controller="ResultsCtrl">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="3">
+          <form class="form-inline" role="form">
+            <div id="grade-checkboxes" class="pull-left">
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> Current Grade
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2"> Minimum grade to pass
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> To earn a final grade of &nbsp;
+              </label>
+            </div>
+            <div class="col-xs-2 pull-left">
+              <select id="grade-select" class="form-control input-sm">
+                <option>A</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>B-</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>C-</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>D-</option>
+                <option>F</option>
+              </select>
+            </div>
+          </form>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h4>Weighted Points</h4></td>
+        <td><h4 class="text-center">Final Grade (Percentage)</h4></td>
+        <td><h4>Final Grade (Letter)</h4></td>
+      </tr>
+      <tr>
+        <td><h2>{{ results.earnedPoints * 1000 | number:2 }} / {{ results.possiblePoints * 1000 | number:2 }}</h2></td>
+        <td><h2 class="text-center">{{ results.percentage | percentage }}</h2></td>
+        <td ng-class="{'danger' : results.percentage < 0.67, 'success' : results.percentage >= 0.95}"><h2>{{ results.letter }}</h2></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

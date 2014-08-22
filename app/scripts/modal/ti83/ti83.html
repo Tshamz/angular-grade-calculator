@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div id="modal-calculator" ng-controller="Ti83Ctrl">
+  <div class="modal-header">
+      <input id="calculator-screen" type="text" ng-model="calculatorState.output" disabled readonly />
+  </div>
+  <div class="modal-body">
+    <div class="regular-row calc-row">
+      <input type="button" value="C" class="btn btn-defaut btn-lg" calculatorbutton="clear" />
+      <input type="button" value="&plusmn;" class="btn btn-defaut btn-lg" calculatorbutton="posneg" />
+      <input type="button" value="&divide;" class="btn btn-defaut btn-lg" calculatorbutton="operation"  />
+      <input type="button" value="&times;" class="btn btn-defaut btn-lg" calculatorbutton="operation" />
+    </div>
+    <div class="regular-row calc-row">
+      <input type="button" value="7" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="8" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="9" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="&minus;" class="btn btn-defaut btn-lg" calculatorbutton="operation" />
+    </div>
+    <div class="regular-row calc-row">
+      <input type="button" value="4" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="5" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="6" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="&plus;" class="btn btn-defaut btn-lg" calculatorbutton="operation" />
+    </div>
+    <div class="bottom-row calc-row">
+      <input type="button" value="1" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="2" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+      <input type="button" value="3" class="btn btn-defaut btn-lg" calculatorbutton="number" />
+    </div>
+    <div class="bottom-row calc-row">
+      <input type="button" value="0" class="btn btn-defaut btn-zero btn-lg" calculatorbutton="number" />
+      <input type="button" value="." class="btn btn-defaut btn-regular btn-lg" calculatorbutton="decimal" />
+    </div>
+    <input type="button" value="=" class="btn btn-warning btn-equals btn-lg" calculatorbutton="solve" />
+  </div>
+</div>
