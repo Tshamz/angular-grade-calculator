@@ -1,0 +1,15 @@
+# linguist-vendored
+# special-vendored-path/* linguist-vendored
+# jquery.js linguist-vendored=false
+
+*/.htaccess linguist-vendored
+app/scripts/vendor linguist-vendored
+test/* linguist-vendored
+
+# linguist-documentation
+# project-docs/* linguist-documentation
+# linguist-documentation=false
+
+
+# linguist-language
+# *.rb linguist-language=
